@@ -1,6 +1,6 @@
 {
   "name": "funmi-cli",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A simple CLI for scaffolding Funmi's vue.js admin projects.",
   "preferGlobal": true,
   "bin": {
