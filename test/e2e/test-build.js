@@ -5,11 +5,11 @@ const fs = require('fs')
 const rm = require('rimraf').sync
 
 describe('command:build', () => {
-  const cli = path.join(__dirname, '../../bin/fadmin-build')
+  const cli = path.join(__dirname, '../../bin/funmi-build')
   const originalCwd = process.cwd()
 
   function setup () {
-    process.chdir(path.join(__dirname, 'mock-fadmin-app'))
+    process.chdir(path.join(__dirname, 'mock-funmi-app'))
   }
 
   function teardown (done) {
@@ -53,7 +53,7 @@ describe('command:build', () => {
     let files
     before(done => {
       setup()
-      execa(cli, ['App.fadmin', '--prod', '--config', 'config.js', '--lib'])
+      execa(cli, ['App.funmi', '--prod', '--config', 'config.js', '--lib'])
         .then(res => {
           result = res
           files = fs.readdirSync('dist')

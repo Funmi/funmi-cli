@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:fadmin-libs/recommended"],
+  "extends": ["plugin:funmi-libs/recommended"],
   "env": {
     "mocha": true,
     "node": true

@@ -36,11 +36,11 @@ function monkeyPatchInquirer (answers) {
   }
 }
 
-describe('fadmin-cli', () => {
+describe('funmi-cli', () => {
   const escapedAnswers = {
-    name: 'fadmin-cli-test',
+    name: 'funmi-cli-test',
     author: 'John "The Tester" Doe <john@doe.com>',
-    description: 'fadmin-cli e2e test',
+    description: 'funmi-cli e2e test',
     preprocessor: {
       less: true,
       sass: true
@@ -51,9 +51,9 @@ describe('fadmin-cli', () => {
   }
 
   const answers = {
-    name: 'fadmin-cli-test',
+    name: 'funmi-cli-test',
     author: 'John Doe <john@doe.com>',
-    description: 'fadmin-cli e2e test',
+    description: 'funmi-cli e2e test',
     preprocessor: {
       less: true,
       sass: true
@@ -104,12 +104,12 @@ describe('fadmin-cli', () => {
     generate('test', MOCK_TEMPLATE_REPO_PATH, MOCK_TEMPLATE_BUILD_PATH, err => {
       if (err) done(err)
 
-      expect(exists(`${MOCK_TEMPLATE_BUILD_PATH}/src/yes.fadmin`)).to.equal(true)
+      expect(exists(`${MOCK_TEMPLATE_BUILD_PATH}/src/yes.funmi`)).to.equal(true)
       expect(exists(`${MOCK_TEMPLATE_BUILD_PATH}/src/no.js`)).to.equal(false)
 
       async.eachSeries([
         'package.json',
-        'src/yes.fadmin'
+        'src/yes.funmi'
       ], function (file, next) {
         const template = fs.readFileSync(`${MOCK_TEMPLATE_REPO_PATH}/template/${file}`, 'utf8')
         const generated = fs.readFileSync(`${MOCK_TEMPLATE_BUILD_PATH}/${file}`, 'utf8')
@@ -214,13 +214,13 @@ describe('fadmin-cli', () => {
     generate('test', MOCK_TEMPLATE_REPO_PATH, MOCK_TEMPLATE_BUILD_PATH, err => {
       if (err) done(err)
 
-      const originalfadminFileOne = fs.readFileSync(`${MOCK_TEMPLATE_REPO_PATH}/template/src/skip-one.fadmin`, 'utf8')
-      const originalfadminFileTwo = fs.readFileSync(`${MOCK_TEMPLATE_REPO_PATH}/template/src/skip-two.fadmin`, 'utf8')
-      const generatedfadminFileOne = fs.readFileSync(`${MOCK_TEMPLATE_BUILD_PATH}/src/skip-one.fadmin`, 'utf8')
-      const generatedfadminFileTwo = fs.readFileSync(`${MOCK_TEMPLATE_BUILD_PATH}/src/skip-two.fadmin`, 'utf8')
+      const originalfunmiFileOne = fs.readFileSync(`${MOCK_TEMPLATE_REPO_PATH}/template/src/skip-one.funmi`, 'utf8')
+      const originalfunmiFileTwo = fs.readFileSync(`${MOCK_TEMPLATE_REPO_PATH}/template/src/skip-two.funmi`, 'utf8')
+      const generatedfunmiFileOne = fs.readFileSync(`${MOCK_TEMPLATE_BUILD_PATH}/src/skip-one.funmi`, 'utf8')
+      const generatedfunmiFileTwo = fs.readFileSync(`${MOCK_TEMPLATE_BUILD_PATH}/src/skip-two.funmi`, 'utf8')
 
-      expect(originalfadminFileOne).to.equal(generatedfadminFileOne)
-      expect(originalfadminFileTwo).to.equal(generatedfadminFileTwo)
+      expect(originalfunmiFileOne).to.equal(generatedfunmiFileOne)
+      expect(originalfunmiFileTwo).to.equal(generatedfunmiFileTwo)
       expect(exists(binFilePath)).to.equal(true)
       expect(exists(`${MOCK_TEMPLATE_BUILD_PATH}/bin.file`)).to.equal(true)
       rm(binFilePath)
@@ -239,13 +239,13 @@ describe('fadmin-cli', () => {
     generate('test', MOCK_SKIP_GLOB, MOCK_TEMPLATE_BUILD_PATH, err => {
       if (err) done(err)
 
-      const originalfadminFileOne = fs.readFileSync(`${MOCK_SKIP_GLOB}/template/src/no.fadmin`, 'utf8')
-      const originalfadminFileTwo = fs.readFileSync(`${MOCK_SKIP_GLOB}/template/src/no.js`, 'utf8')
-      const generatedfadminFileOne = fs.readFileSync(`${MOCK_TEMPLATE_BUILD_PATH}/src/no.fadmin`, 'utf8')
-      const generatedfadminFileTwo = fs.readFileSync(`${MOCK_TEMPLATE_BUILD_PATH}/src/no.js`, 'utf8')
+      const originalfunmiFileOne = fs.readFileSync(`${MOCK_SKIP_GLOB}/template/src/no.funmi`, 'utf8')
+      const originalfunmiFileTwo = fs.readFileSync(`${MOCK_SKIP_GLOB}/template/src/no.js`, 'utf8')
+      const generatedfunmiFileOne = fs.readFileSync(`${MOCK_TEMPLATE_BUILD_PATH}/src/no.funmi`, 'utf8')
+      const generatedfunmiFileTwo = fs.readFileSync(`${MOCK_TEMPLATE_BUILD_PATH}/src/no.js`, 'utf8')
 
-      expect(originalfadminFileOne).to.equal(generatedfadminFileOne)
-      expect(originalfadminFileTwo).to.equal(generatedfadminFileTwo)
+      expect(originalfunmiFileOne).to.equal(generatedfunmiFileOne)
+      expect(originalfunmiFileTwo).to.equal(generatedfunmiFileTwo)
       expect(exists(binFilePath)).to.equal(true)
       expect(exists(`${MOCK_TEMPLATE_BUILD_PATH}/bin.file`)).to.equal(true)
       rm(binFilePath)

@@ -1,7 +1,7 @@
-import fadmin from 'fadmin'
-import App from './App.fadmin'
+import funmi from 'funmi'
+import App from './App.funmi'
 
-new fadmin({
+new funmi({
   el: '#app',
   render: h => h(App)
 })

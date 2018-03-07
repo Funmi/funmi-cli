@@ -1,25 +1,25 @@
-# fadmin-cli [![Build Status](https://img.shields.io/circleci/project/fadminjs/fadmin-cli/master.svg)](https://circleci.com/gh/fadminjs/fadmin-cli) [![npm package](https://img.shields.io/npm/v/fadmin-cli.svg)](https://www.npmjs.com/package/fadmin-cli)
+# funmi-cli [![Build Status](https://img.shields.io/circleci/project/funmijs/funmi-cli/master.svg)](https://circleci.com/gh/funmijs/funmi-cli) [![npm package](https://img.shields.io/npm/v/funmi-cli.svg)](https://www.npmjs.com/package/funmi-cli)
 
-A simple CLI for scaffolding fadmin.js projects.
+A simple CLI for scaffolding funmi.js projects.
 
 ### Installation
 
 Prerequisites: [Node.js](https://nodejs.org/en/) (>=6.x, 8.x preferred), npm version 3+ and [Git](https://git-scm.com/).
 
 ``` bash
-$ npm install -g fadmin-cli
+$ npm install -g funmi-cli
 ```
 
 ### Usage
 
 ``` bash
-$ fadmin init <template-name> <project-name>
+$ funmi init <template-name> <project-name>
 ```
 
 Example:
 
 ``` bash
-$ fadmin init fadmin-template my-project
+$ funmi init funmi-template my-project
 ```
 
 ### License

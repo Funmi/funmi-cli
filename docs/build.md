@@ -1,51 +1,51 @@
-# fadmin build
+# funmi build
 
-`fadmin build` command gives you a zero-configuration development setup, install once and build everywhere.
+`funmi build` command gives you a zero-configuration development setup, install once and build everywhere.
 
 ## Features
 
 - **Not a boilerplate**: run a single command to develop your app
 - **Out of the box**: ES2015, single-file component with hot reloading and custom CSS preprocessors
-- **Customizable**: populate a `~/.fadmin/webpack.config.js` for custom webpack config
-- **Single-file component mode**: simply run `fadmin build Component.fadmin` and test it out in the browser!
+- **Customizable**: populate a `~/.funmi/webpack.config.js` for custom webpack config
+- **Single-file component mode**: simply run `funmi build Component.funmi` and test it out in the browser!
 
 ## Get started
 
-Make sure that you've installed `fadmin-cli` with `npm >= 3` or `yarn >= 0.7`.
+Make sure that you've installed `funmi-cli` with `npm >= 3` or `yarn >= 0.7`.
 
 Populate an app entry `./index.js` in your project:
 
 ```js
-import fadmin from 'fadmin'
+import funmi from 'funmi'
 
-new fadmin({
+new funmi({
   el: '#app',
   render: h => h('h2', 'hello world')
 })
 ```
 
-And then run `fadmin build index.js` and go to `http://localhost:4000`
+And then run `funmi build index.js` and go to `http://localhost:4000`
 
 **To build for production (minimized and optimized):**
 
 ```bash
-$ fadmin build index.js --prod
+$ funmi build index.js --prod
 ```
 
-If you want to directly test a component without manually create a fadmin instance for it, try:
+If you want to directly test a component without manually create a funmi instance for it, try:
 
 ```bash
-$ fadmin build Component.fadmin
+$ funmi build Component.funmi
 ```
 
 <details><summary>How does this work?</summary><br>
-When the input file ends with `.fadmin` extension, we use a [default app entry](/lib/default-entry.es6) to load the given component, otherwise we treat it as a normal webpack entry. For jsx component which ends with `.js` extension, you can enable this behavior manually by adding `--mount`.
+When the input file ends with `.funmi` extension, we use a [default app entry](/lib/default-entry.es6) to load the given component, otherwise we treat it as a normal webpack entry. For jsx component which ends with `.js` extension, you can enable this behavior manually by adding `--mount`.
 </details>
 
 **To distribute component:**
 
 ```bash
-$ fadmin build Component.fadmin --prod --lib
+$ funmi build Component.funmi --prod --lib
 ```
 
 This will create an optimized bundle in UMD format, and the name of exported library is set to `Component`, you can use `--lib [CustomLibraryName]` to customize it.
@@ -55,7 +55,7 @@ Note that in some cases you may use [`externals`](https://webpack.js.org/configu
 **Watch mode:**
 
 ```bash
-$ fadmin build index.js --watch
+$ funmi build index.js --watch
 ```
 
 It's similar to `development mode` but does not add hot-reloading support and uses a real file system.
@@ -63,12 +63,12 @@ It's similar to `development mode` but does not add hot-reloading support and us
 **For more CLI usages:**
 
 ```bash
-$ fadmin build -h
+$ funmi build -h
 ```
 
 ## Configuration files
 
-By default, we use `~/.fadmin/config.js` and `~/.fadmin/webpack.config.js` if they exist.
+By default, we use `~/.funmi/config.js` and `~/.funmi/webpack.config.js` if they exist.
 
 To use a custom config file, add `--config [file]`
 
@@ -82,7 +82,7 @@ You can define CLI options in this file.
 
 Type: `string` `Array` `Object`
 
-It's the first argument of `fadmin build` command, eg: `fadmin build entry.js`. You can set it here to omit it in CLI arguments.
+It's the first argument of `funmi build` command, eg: `funmi build entry.js`. You can set it here to omit it in CLI arguments.
 
 The single-component mode (`--mount`) will not work if you set `entry` to an `Array` or `Object`.
 
@@ -161,7 +161,7 @@ Type: `Object` `Array` `boolean`
 
 ```js
 {
-  title: 'fadmin App',
+  title: 'funmi App',
   template: path.join(__dirname, '../lib/template.html')
 }
 ```
@@ -207,7 +207,7 @@ module.exports = {
 }
 ```
 
-This way, when you fetch `/api/todos` in your fadmin app, the development server will proxy your request to `http://localhost:8080/api/todos`.
+This way, when you fetch `/api/todos` in your funmi app, the development server will proxy your request to `http://localhost:8080/api/todos`.
 
 We use [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) under the hood, so the `proxy` option can also be an object:
 
@@ -285,11 +285,11 @@ Since all CSS will be piped through `postcss-loader`, `autoprefixer` and `postcs
 
 ### Custom babel config
 
-By default we only use a single babel preset: [babel-preset-fadmin-app](https://github.com/egoist/babel-preset-fadmin-app) which includes following features:
+By default we only use a single babel preset: [babel-preset-funmi-app](https://github.com/egoist/babel-preset-funmi-app) which includes following features:
 
 - ES2015/2016/2017 and Stage-2 features
 - Transform `async/await` and `generator`
-- Transform fadmin JSX
+- Transform funmi JSX
 
 You can set `babel` option in config file or populate a `.babelrc` in project root directory to override it.
 

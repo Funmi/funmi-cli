@@ -1,19 +1,19 @@
 {
-  "name": "fadmin-cli",
+  "name": "funmi-cli",
   "version": "1.0.1",
   "description": "A simple CLI for scaffolding Funmi's vue.js admin projects.",
   "preferGlobal": true,
   "bin": {
-    "fadmin": "bin/fadmin",
-    "fadmin-init": "bin/fadmin-init",
-    "fadmin-list": "bin/fadmin-list"
+    "funmi": "bin/funmi",
+    "funmi-init": "bin/funmi-init",
+    "funmi-list": "bin/funmi-list"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Funmi/fadmin-cli.git"
+    "url": "git+https://github.com/Funmi/funmi-cli.git"
   },
   "keywords": [
-    "fadmin",
+    "funmi",
     "cli",
     "spa"
   ],
@@ -53,7 +53,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^3.19.0",
-    "eslint-plugin-fadmin-libs": "^1.2.1",
+    "eslint-plugin-funmi-libs": "^1.2.1",
     "execa": "^0.8.0",
     "mocha": "^3.5.3"
   },

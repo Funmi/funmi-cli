@@ -24,7 +24,6 @@ const getTemplatePath = localPath.getTemplatePath
  */
 
 program
-  // .usage('<template-name> [project-name]')
   .usage('<template-name> [project-name]')
   .option('-c, --clone', 'use git clone')
   .option('--offline', 'use cached template')
@@ -37,10 +36,10 @@ program.on('--help', () => {
   console.log('  Examples:')
   console.log()
   console.log(chalk.gray('    # create a new project with an official template'))
-  console.log('    $ fadmin init webpack my-project')
+  console.log('    $ funmi init webpack my-project')
   console.log()
   console.log(chalk.gray('    # create a new project straight from a github template'))
-  console.log('    $ fadmin init username/repo my-project')
+  console.log('    $ funmi init username/repo my-project')
   console.log()
 })
 
@@ -67,8 +66,6 @@ const to = path.resolve(rawName || '.')
 const clone = program.clone || false
 
 const tmp = path.join(home, template.replace(/[\/:]/g, '-'))
-// logger.fatal('home:',home)
-// logger.fatal('tmp:',tmp)
 if (program.offline) {
   console.log(`> Use cached template at ${chalk.yellow(tildify(tmp))}`)
   template = tmp
@@ -120,8 +117,7 @@ function run () {
     checkVersion(() => {
       if (!hasSlash) {
         // use official templates
-        // change template place from internet here!!!
-        const officialTemplate = 'Funmi/' + template
+        const officialTemplate = 'funmijs-templates/' + template
         if (template.indexOf('#') !== -1) {
           downloadAndGenerate(officialTemplate)
         } else {
@@ -152,11 +148,9 @@ function downloadAndGenerate (template) {
   // Remove if local template exists
   if (exists(tmp)) rm(tmp)
   download(template, tmp, { clone }, err => {
-    // logger.fatal('here:',template)
     spinner.stop()
     if (err) logger.fatal('Failed to download  ' + template + ': ' + err.message.trim())
     generate(name, tmp, to, err => {
-      // logger.fatal('here',to)F:\wcl\ng4\first
       if (err) logger.fatal('here',err)
       console.log()
       logger.success('Generated "%s".', name)

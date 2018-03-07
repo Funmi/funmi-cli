@@ -4,8 +4,8 @@ const chalk = require('chalk')
 
 console.log(chalk.yellow(
   '\n' +
-  '  We are slimming down fadmin-cli to optimize the initial installation by ' +
-  'removing the `fadmin build` command.\n' +
+  '  We are slimming down funmi-cli to optimize the initial installation by ' +
+  'removing the `funmi build` command.\n' +
   '  Check out Poi (https://github.com/egoist/poi) which offers the same functionality!' +
   '\n'
 ))

@@ -18,9 +18,9 @@ process.on('exit', () => {
  */
 
 request({
-  url: 'https://api.github.com/users/fadminjs-templates/repos',
+  url: 'https://api.github.com/users/funmijs-templates/repos',
   headers: {
-    'User-Agent': 'fadmin-cli'
+    'User-Agent': 'funmi-cli'
   }
 }, (err, res, body) => {
   if (err) logger.fatal(err)

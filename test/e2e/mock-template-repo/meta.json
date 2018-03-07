@@ -9,7 +9,7 @@
       "type": "string",
       "required": true,
       "label": "Project description",
-      "default": "A fadmin.js project"
+      "default": "A funmi.js project"
     },
     "author": {
       "type": "string",
@@ -37,7 +37,7 @@
   },
   "filters": {
     "src/*.js": "pick === 'yes'",
-    "**/*.fadmin": "pick === 'no'"
+    "**/*.funmi": "pick === 'no'"
   },
-  "skipInterpolation": "src/*-{one,two}.fadmin"
+  "skipInterpolation": "src/*-{one,two}.funmi"
 }
