@@ -1,0 +1,7 @@
+{
+  "extends": ["plugin:fadmin-libs/recommended"],
+  "env": {
+    "mocha": true,
+    "node": true
+  }
+}
